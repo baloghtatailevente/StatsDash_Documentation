@@ -1,7 +1,11 @@
 site_name: StatsDash Dokumentáció
 site_url: https://docs.statsdash.hu
+site_description: Felhasználói dokumentáció a StatsDash versenypontszám-kezelő rendszerhez
+docs_dir: docs
+
 theme:
   name: material
+  language: hu
   font:
     text: Merriweather
     code: Red Hat Mono
@@ -9,22 +13,31 @@ theme:
   favicon: assets/favicon.ico
   features:
     - navigation.footer
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.tooltips
+    - toc.follow
   palette:
-    
+    # Sötét mód – elsőként, mert az app alapértelmezett témája sötét
     - scheme: slate
+      primary: blue
+      accent: teal
       toggle:
         icon: material/weather-sunny
-        name: Dark mode
-      primary: green
-      accent: deep purple
+        name: Váltás világos módra
 
-    
+    # Világos mód – az app light témájához igazítva (kék primary, teal accent)
     - scheme: default
+      primary: blue
+      accent: teal
       toggle:
         icon: material/weather-night
-        name: Light mode
-      primary: blue
-      accent: deep orange
+        name: Váltás sötét módra
 
 markdown_extensions:
   - pymdownx.emoji:
@@ -45,12 +58,17 @@ markdown_extensions:
       alternate_style: true
   - admonition
   - pymdownx.details
+  - tables
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
 
 extra:
   social:
     - icon: material/web
       link: https://v2.statsdash.hu
-    
+
     - icon: material/email
       link: mailto:info@statsdash.hu
 
